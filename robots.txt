@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://interstate-index.vercel.app/sitemap.xml

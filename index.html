@@ -3,205 +3,286 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Interstate Index is a searchable civic atlas for active and possible U.S. Interstate Highway designations."
-    />
-    <title>Interstate Index</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Interstate Index | A reference atlas for U.S. Interstate numbering</title>
+    <meta name="description" content="Browse every active Interstate Highway, decode any route number, and explore the logic behind the U.S. Interstate numbering system." />
+    <link rel="canonical" href="https://interstate-index.vercel.app" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0b0f17" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Interstate Index" />
+    <meta property="og:title" content="Interstate Index | A reference atlas for U.S. Interstate numbering" />
+    <meta property="og:description" content="Browse every active Interstate Highway, decode any route number, and explore the logic behind the U.S. Interstate numbering system." />
+    <meta property="og:url" content="https://interstate-index.vercel.app" />
+    <meta property="og:image" content="https://interstate-index.vercel.app/assets/og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Interstate Index | A reference atlas for U.S. Interstate numbering" />
+    <meta name="twitter:description" content="Browse every active Interstate Highway, decode any route number, and explore the logic behind the U.S. Interstate numbering system." />
+    <meta name="twitter:image" content="https://interstate-index.vercel.app/assets/og.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <link rel="stylesheet" href="/assets/styles.css" />
   </head>
-  <body>
-    <div class="site-shell">
-      <header class="topbar" aria-label="Site header">
-        <a class="brand" href="#top" aria-label="Interstate Index home">
-          <span class="shield-mini">II</span>
+  <body class="">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="Interstate Index home">
+          <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">II</span></span>
           <span>Interstate Index</span>
         </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#database">Database</a>
-          <a href="#decoder">Decoder</a>
-          <a href="#guide">Guide</a>
-          <a href="#sources">Sources</a>
-        </nav>
-      </header>
+        <div class="topbar-controls">
+          <nav class="nav-links" aria-label="Primary" data-nav>
+            <a class="nav-link" href="/database">Database</a>
+          <a class="nav-link" href="/decoder">Decoder</a>
+          <a class="nav-link" href="/routes">Routes</a>
+          <a class="nav-link" href="/guide">Guide</a>
+          <a class="nav-link" href="/map">Map</a>
+          <a class="nav-link" href="/history">History</a>
+          <a class="nav-link" href="/faq">FAQ</a>
+          </nav>
+          <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" data-theme-toggle>
+            <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+            <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+          </button>
+          <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
 
-      <main id="top">
-        <section class="hero section-grid" aria-labelledby="hero-title">
+      <section class="wrap-wide">
+        <div class="hero">
           <div class="hero-copy">
-            <p class="system-line">Active routes, number logic, and every possible designation pattern.</p>
-            <h1 id="hero-title">Interstate Index</h1>
-            <p class="hero-text">
-              A designed reference for the U.S. Interstate system: active mainline corridors, official
-              non-contiguous programs, notable auxiliary examples, and every number slot from I-1 to I-999.
-            </p>
-            <form class="hero-search" role="search" aria-label="Route search">
-              <label for="hero-route-search">Route</label>
-              <input id="hero-route-search" type="search" inputmode="search" autocomplete="off" placeholder="Try I-95, 495, H-3, or PRI-1" />
+            <p class="kicker">U.S. Interstate Highway System</p>
+            <h1>Read the map by its <span class="accent">numbers.</span></h1>
+            <p class="lead">A reference atlas for the U.S. Interstate Highway System. Search active mainlines, read the logic behind every route number, and explore each corridor in detail.</p>
+            <form class="field hero-search" action="/database" method="get" role="search">
+              <label for="q">Route</label>
+              <input id="q" name="q" type="search" autocomplete="off" placeholder="Try I-95, 495, H-3, or PRI-1" />
             </form>
-            <div class="hero-actions" aria-label="Primary actions">
-              <a class="button primary" href="#database">Browse routes</a>
-              <a class="button secondary" href="#decoder">Decode a number</a>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="/database">Browse the database</a>
+              <a class="btn btn-secondary" href="/decoder">Decode a number</a>
             </div>
           </div>
-
-          <div class="atlas-panel" aria-label="Interstate atlas preview">
-            <div class="map-grid" aria-hidden="true">
-              <span class="route-line line-a"></span>
-              <span class="route-line line-b"></span>
-              <span class="route-line line-c"></span>
-              <span class="route-line line-d"></span>
-              <span class="map-dot dot-a"></span>
-              <span class="map-dot dot-b"></span>
-              <span class="map-dot dot-c"></span>
-              <span class="map-dot dot-d"></span>
-              <span class="shield route-95">95</span>
-              <span class="shield route-80">80</span>
-              <span class="shield route-5">5</span>
-              <span class="shield route-10">10</span>
-              <span class="shield route-495">495</span>
+          <aside class="board" aria-label="System highlights">
+            <div class="board-head">
+              <span>System board</span>
+              <span class="mono">1,005 records</span>
             </div>
-            <div class="atlas-caption">
-              <span class="caption-title">System snapshot</span>
-              <span id="hero-system-count">990 numeric designation patterns</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="metric-strip" aria-label="Database statistics">
-          <div>
-            <span class="metric-value" id="active-mainline-count">0</span>
-            <span class="metric-label">active numeric mainlines</span>
-          </div>
-          <div>
-            <span class="metric-value" id="possible-count">0</span>
-            <span class="metric-label">possible numeric slots</span>
-          </div>
-          <div>
-            <span class="metric-value" id="non-contiguous-count">0</span>
-            <span class="metric-label">Hawaii, Alaska, Puerto Rico routes</span>
-          </div>
-          <div>
-            <span class="metric-value" id="notable-aux-count">0</span>
-            <span class="metric-label">notable auxiliary examples</span>
-          </div>
-        </section>
-
-        <section class="database-section" id="database" aria-labelledby="database-title">
-          <div class="section-heading">
-            <p class="system-line">Reference database</p>
-            <h2 id="database-title">Find any Interstate designation.</h2>
-            <p>
-              The browser combines seeded active routes with generated designation records, so assigned
-              highways and theoretical route numbers can be compared in one place.
-            </p>
-          </div>
-
-          <div class="browser-layout">
-            <div class="browser-main">
-              <div class="toolbar" aria-label="Database controls">
-                <div class="search-field">
-                  <label for="route-search">Search</label>
-                  <input id="route-search" type="search" autocomplete="off" placeholder="Route, state, parent, corridor" />
-                </div>
-                <div class="filter-group" role="group" aria-label="Route filters">
-                  <button class="filter-button is-active" data-filter="all" type="button">All</button>
-                  <button class="filter-button" data-filter="primary" type="button">Primary</button>
-                  <button class="filter-button" data-filter="auxiliary" type="button">Auxiliary</button>
-                  <button class="filter-button" data-filter="possible" type="button">Possible</button>
-                  <button class="filter-button" data-filter="noncontiguous" type="button">Non-contiguous</button>
-                </div>
-              </div>
-
-              <div class="result-meta">
-                <span id="result-count">0 results</span>
-                <span id="result-context">Showing the full index</span>
-              </div>
-
-              <div class="route-list" id="route-list" aria-live="polite"></div>
-            </div>
-
-            <aside class="detail-panel" id="route-detail" aria-label="Selected route detail">
-              <div class="detail-empty">
-                <span class="shield detail-shield">95</span>
-                <h3>Select a route</h3>
-                <p>Route details will appear here.</p>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section class="decoder-section" id="decoder" aria-labelledby="decoder-title">
-          <div class="decoder-card">
-            <div class="decoder-copy">
-              <p class="system-line">Number decoder</p>
-              <h2 id="decoder-title">Read the system at a glance.</h2>
-              <p>
-                Odd one- and two-digit numbers generally run north-south, even numbers generally run
-                east-west, and three-digit auxiliaries inherit their final two digits from a parent route.
-              </p>
-            </div>
-            <form class="decoder-form" aria-label="Route number decoder">
-              <label for="decoder-input">Designation</label>
-              <input id="decoder-input" type="search" autocomplete="off" placeholder="Enter I-270 or 270" />
-              <div class="decoder-output" id="decoder-output"></div>
-            </form>
-          </div>
-        </section>
-
-        <section class="guide-section" id="guide" aria-labelledby="guide-title">
-          <div class="section-heading compact">
-            <p class="system-line">Numbering guide</p>
-            <h2 id="guide-title">The pattern underneath the map.</h2>
-          </div>
-          <div class="guide-grid">
-            <article>
-              <span class="guide-number">01</span>
-              <h3>Mainline routes</h3>
-              <p>
-                Primary Interstate routes use one or two digits. Odd numbers usually travel north-south,
-                even numbers usually travel east-west, and larger numbers trend north or east.
-              </p>
-            </article>
-            <article>
-              <span class="guide-number">02</span>
-              <h3>Auxiliary routes</h3>
-              <p>
-                Three-digit routes usually borrow the final two digits from a parent. An even first digit
-                usually means a loop or bypass; an odd first digit usually means a spur or connector.
-              </p>
-            </article>
-            <article>
-              <span class="guide-number">03</span>
-              <h3>Non-contiguous programs</h3>
-              <p>
-                Hawaii, Alaska, and Puerto Rico have separate federally recognized Interstate programs with
-                local route labels such as H-1, A-1, and PRI-1.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="sources-section" id="sources" aria-labelledby="sources-title">
-          <div>
-            <p class="system-line">Source note</p>
-            <h2 id="sources-title">Built for public reference.</h2>
-          </div>
-          <div>
-            <p>
-              Seed data is organized from public Interstate route lists and FHWA route-numbering guidance.
-              Planning, engineering, or legal use should be verified against current FHWA, AASHTO, and state
-              transportation records.
-            </p>
-            <ul class="source-links">
-              <li><a href="https://www.fhwa.dot.gov/programadmin/interstate.cfm" target="_blank" rel="noreferrer">FHWA Interstate route numbering</a></li>
-              <li><a href="https://en.wikipedia.org/wiki/List_of_primary_Interstate_Highways" target="_blank" rel="noreferrer">Primary Interstate route list</a></li>
-              <li><a href="https://en.wikipedia.org/wiki/List_of_auxiliary_Interstate_Highways" target="_blank" rel="noreferrer">Auxiliary Interstate route list</a></li>
+            <ul class="board-list">
+              <li>
+                <a href="/routes/I-90">
+                  <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">90</span></span>
+                  <span class="board-meta"><span class="board-name">I-90</span><span class="board-sub">Seattle to Boston</span></span>
+                  <span class="board-stat mono">3,020 mi</span>
+                </a>
+              </li>
+              <li>
+                <a href="/routes/I-95">
+                  <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">95</span></span>
+                  <span class="board-meta"><span class="board-name">I-95</span><span class="board-sub">Miami to Houlton</span></span>
+                  <span class="board-stat mono">1,908 mi</span>
+                </a>
+              </li>
+              <li>
+                <a href="/routes/I-10">
+                  <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">10</span></span>
+                  <span class="board-meta"><span class="board-name">I-10</span><span class="board-sub">Santa Monica to Jacksonville</span></span>
+                  <span class="board-stat mono">2,460 mi</span>
+                </a>
+              </li>
+              <li>
+                <a href="/routes/I-5">
+                  <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">5</span></span>
+                  <span class="board-meta"><span class="board-name">I-5</span><span class="board-sub">San Diego to the Canadian border</span></span>
+                  <span class="board-stat mono">1,381 mi</span>
+                </a>
+              </li>
+              <li>
+                <a href="/routes/I-70">
+                  <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">70</span></span>
+                  <span class="board-meta"><span class="board-name">I-70</span><span class="board-sub">Cove Fort to Baltimore</span></span>
+                  <span class="board-stat mono">2,151 mi</span>
+                </a>
+              </li>
+              <li>
+                <a href="/routes/I-97">
+                  <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">97</span></span>
+                  <span class="board-meta"><span class="board-name">I-97</span><span class="board-sub">Annapolis to Baltimore</span></span>
+                  <span class="board-stat mono">18 mi</span>
+                </a>
+              </li>
             </ul>
-          </div>
-        </section>
-      </main>
-    </div>
+            <a class="board-foot" href="/routes">View the full route directory</a>
+          </aside>
+        </div>
+      </section>
 
-    <script src="app.js" defer></script>
+      <section class="wrap section-tight">
+        <div class="metrics" data-reveal>
+          <div class="metric"><span class="metric-value mono">71</span><span class="metric-label">active numeric mainlines</span></div>
+          <div class="metric"><span class="metric-value mono">901</span><span class="metric-label">possible number slots, I-1 to I-999</span></div>
+          <div class="metric"><span class="metric-value mono">10</span><span class="metric-label">Hawaii, Alaska, and Puerto Rico routes</span></div>
+          <div class="metric"><span class="metric-value mono">23</span><span class="metric-label">notable auxiliary examples</span></div>
+        </div>
+      </section>
+
+      <section class="wrap section">
+        <div class="section-head">
+          <h2>Three ways in.</h2>
+          <p>Search the full index, decode a single number, or learn the rules that govern the whole grid.</p>
+        </div>
+        <div class="bento">
+          <a class="sign col-4" href="/database" data-reveal style="display:block">
+            <h2 style="font-size:1.8rem">Search the database</h2>
+            <p>Every active route plus every theoretical number slot from I-1 to I-999, filterable by type, status, and corridor.</p>
+            <span class="btn btn-secondary" style="margin-top:18px;background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.3);color:#fff">Open the database</span>
+          </a>
+          <div class="col-2" style="display:grid;gap:18px">
+            <a class="card card-link" href="/decoder" data-reveal>
+              <h3>Decode a number</h3>
+              <p>Enter any designation and read what it means: direction, parent route, and whether it is a loop or a spur.</p>
+            </a>
+            <a class="card card-link" href="/guide" data-reveal>
+              <h3>Read the numbering guide</h3>
+              <p>How the grid works, why odd and even numbers point in fixed directions, and the exceptions that break the rules.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap section">
+        <div class="section-head">
+          <p class="kicker">Featured corridors</p>
+          <h2>A few routes to start with.</h2>
+          <p>From the longest Interstate to the shortest two-digit route. Open any card for its full record.</p>
+        </div>
+        <div class="grid grid-3">
+          
+          <a class="card card-link route-card" href="/routes/I-90" data-reveal>
+            <div class="route-card-head">
+              <span class="shield" aria-hidden="true"><span class="shield-num">90</span></span>
+              <div class="route-card-meta">
+                <span class="name">I-90</span>
+                <span class="sub">East-west</span>
+              </div>
+            </div>
+            <p>Seattle to Boston.</p>
+            <span class="stat mono">3,020 mi</span>
+          </a>
+          <a class="card card-link route-card" href="/routes/I-95" data-reveal>
+            <div class="route-card-head">
+              <span class="shield" aria-hidden="true"><span class="shield-num">95</span></span>
+              <div class="route-card-meta">
+                <span class="name">I-95</span>
+                <span class="sub">North-south</span>
+              </div>
+            </div>
+            <p>Miami to Houlton.</p>
+            <span class="stat mono">1,908 mi</span>
+          </a>
+          <a class="card card-link route-card" href="/routes/I-10" data-reveal>
+            <div class="route-card-head">
+              <span class="shield" aria-hidden="true"><span class="shield-num">10</span></span>
+              <div class="route-card-meta">
+                <span class="name">I-10</span>
+                <span class="sub">East-west</span>
+              </div>
+            </div>
+            <p>Santa Monica to Jacksonville.</p>
+            <span class="stat mono">2,460 mi</span>
+          </a>
+          <a class="card card-link route-card" href="/routes/I-5" data-reveal>
+            <div class="route-card-head">
+              <span class="shield" aria-hidden="true"><span class="shield-num">5</span></span>
+              <div class="route-card-meta">
+                <span class="name">I-5</span>
+                <span class="sub">North-south</span>
+              </div>
+            </div>
+            <p>San Diego to the Canadian border.</p>
+            <span class="stat mono">1,381 mi</span>
+          </a>
+          <a class="card card-link route-card" href="/routes/I-70" data-reveal>
+            <div class="route-card-head">
+              <span class="shield" aria-hidden="true"><span class="shield-num">70</span></span>
+              <div class="route-card-meta">
+                <span class="name">I-70</span>
+                <span class="sub">East-west</span>
+              </div>
+            </div>
+            <p>Cove Fort to Baltimore.</p>
+            <span class="stat mono">2,151 mi</span>
+          </a>
+          <a class="card card-link route-card" href="/routes/I-97" data-reveal>
+            <div class="route-card-head">
+              <span class="shield" aria-hidden="true"><span class="shield-num">97</span></span>
+              <div class="route-card-meta">
+                <span class="name">I-97</span>
+                <span class="sub">North-south</span>
+              </div>
+            </div>
+            <p>Annapolis to Baltimore.</p>
+            <span class="stat mono">18 mi</span>
+          </a>
+        </div>
+        <div style="margin-top:24px">
+          <a class="btn-ghost" href="/routes">See the full route directory</a>
+        </div>
+      </section>
+
+      <section class="wrap section-tight">
+        <div class="sign cta-band" data-reveal>
+          <div>
+            <h2 style="font-size:1.9rem">Every number, in one index.</h2>
+            <p>Active mainlines, federal programs, notable auxiliaries, and every theoretical slot from I-1 to I-999.</p>
+          </div>
+          <a class="btn btn-secondary" href="/database" style="background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.35);color:#fff">Open the database</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap-wide">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a class="brand" href="/" style="margin-bottom:14px">
+              <span class="shield shield-sm" aria-hidden="true"><span class="shield-num">II</span></span>
+              <span>Interstate Index</span>
+            </a>
+            <p class="footer-blurb">A reference atlas for the U.S. Interstate Highway System: active routes, the numbering logic, and every possible designation.</p>
+          </div>
+          
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="/database">Route database</a>
+          <a href="/decoder">Number decoder</a>
+          <a href="/routes">Route directory</a>
+          <a href="/states">Browse by state</a>
+          <a href="/map">National map</a>
+          <a href="/superlatives">Superlatives</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="/guide">Numbering guide</a>
+          <a href="/history">System history</a>
+          <a href="/glossary">Glossary</a>
+          <a href="/faq">FAQ</a>
+          <a href="/sources">Sources</a>
+        </div>
+        </div>
+        <div class="footer-bottom">
+          <span>Reference data only. Verify against FHWA, AASHTO, and state DOT records. See <a href="/sources">sources and method</a>.</span>
+          <span>Built as a static site. <a href="/sources">About the data</a></span>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/assets/ui.mjs"></script>
+
   </body>
 </html>
