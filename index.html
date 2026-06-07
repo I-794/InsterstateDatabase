@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Interstate Index is a searchable civic atlas for active and possible U.S. Interstate Highway designations."
+    />
+    <title>Interstate Index</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Site header">
+        <a class="brand" href="#top" aria-label="Interstate Index home">
+          <span class="shield-mini">II</span>
+          <span>Interstate Index</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#database">Database</a>
+          <a href="#decoder">Decoder</a>
+          <a href="#guide">Guide</a>
+          <a href="#sources">Sources</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero section-grid" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="system-line">Active routes, number logic, and every possible designation pattern.</p>
+            <h1 id="hero-title">Interstate Index</h1>
+            <p class="hero-text">
+              A designed reference for the U.S. Interstate system: active mainline corridors, official
+              non-contiguous programs, notable auxiliary examples, and every number slot from I-1 to I-999.
+            </p>
+            <form class="hero-search" role="search" aria-label="Route search">
+              <label for="hero-route-search">Route</label>
+              <input id="hero-route-search" type="search" inputmode="search" autocomplete="off" placeholder="Try I-95, 495, H-3, or PRI-1" />
+            </form>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button primary" href="#database">Browse routes</a>
+              <a class="button secondary" href="#decoder">Decode a number</a>
+            </div>
+          </div>
+
+          <div class="atlas-panel" aria-label="Interstate atlas preview">
+            <div class="map-grid" aria-hidden="true">
+              <span class="route-line line-a"></span>
+              <span class="route-line line-b"></span>
+              <span class="route-line line-c"></span>
+              <span class="route-line line-d"></span>
+              <span class="map-dot dot-a"></span>
+              <span class="map-dot dot-b"></span>
+              <span class="map-dot dot-c"></span>
+              <span class="map-dot dot-d"></span>
+              <span class="shield route-95">95</span>
+              <span class="shield route-80">80</span>
+              <span class="shield route-5">5</span>
+              <span class="shield route-10">10</span>
+              <span class="shield route-495">495</span>
+            </div>
+            <div class="atlas-caption">
+              <span class="caption-title">System snapshot</span>
+              <span id="hero-system-count">990 numeric designation patterns</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Database statistics">
+          <div>
+            <span class="metric-value" id="active-mainline-count">0</span>
+            <span class="metric-label">active numeric mainlines</span>
+          </div>
+          <div>
+            <span class="metric-value" id="possible-count">0</span>
+            <span class="metric-label">possible numeric slots</span>
+          </div>
+          <div>
+            <span class="metric-value" id="non-contiguous-count">0</span>
+            <span class="metric-label">Hawaii, Alaska, Puerto Rico routes</span>
+          </div>
+          <div>
+            <span class="metric-value" id="notable-aux-count">0</span>
+            <span class="metric-label">notable auxiliary examples</span>
+          </div>
+        </section>
+
+        <section class="database-section" id="database" aria-labelledby="database-title">
+          <div class="section-heading">
+            <p class="system-line">Reference database</p>
+            <h2 id="database-title">Find any Interstate designation.</h2>
+            <p>
+              The browser combines seeded active routes with generated designation records, so assigned
+              highways and theoretical route numbers can be compared in one place.
+            </p>
+          </div>
+
+          <div class="browser-layout">
+            <div class="browser-main">
+              <div class="toolbar" aria-label="Database controls">
+                <div class="search-field">
+                  <label for="route-search">Search</label>
+                  <input id="route-search" type="search" autocomplete="off" placeholder="Route, state, parent, corridor" />
+                </div>
+                <div class="filter-group" role="group" aria-label="Route filters">
+                  <button class="filter-button is-active" data-filter="all" type="button">All</button>
+                  <button class="filter-button" data-filter="primary" type="button">Primary</button>
+                  <button class="filter-button" data-filter="auxiliary" type="button">Auxiliary</button>
+                  <button class="filter-button" data-filter="possible" type="button">Possible</button>
+                  <button class="filter-button" data-filter="noncontiguous" type="button">Non-contiguous</button>
+                </div>
+              </div>
+
+              <div class="result-meta">
+                <span id="result-count">0 results</span>
+                <span id="result-context">Showing the full index</span>
+              </div>
+
+              <div class="route-list" id="route-list" aria-live="polite"></div>
+            </div>
+
+            <aside class="detail-panel" id="route-detail" aria-label="Selected route detail">
+              <div class="detail-empty">
+                <span class="shield detail-shield">95</span>
+                <h3>Select a route</h3>
+                <p>Route details will appear here.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="decoder-section" id="decoder" aria-labelledby="decoder-title">
+          <div class="decoder-card">
+            <div class="decoder-copy">
+              <p class="system-line">Number decoder</p>
+              <h2 id="decoder-title">Read the system at a glance.</h2>
+              <p>
+                Odd one- and two-digit numbers generally run north-south, even numbers generally run
+                east-west, and three-digit auxiliaries inherit their final two digits from a parent route.
+              </p>
+            </div>
+            <form class="decoder-form" aria-label="Route number decoder">
+              <label for="decoder-input">Designation</label>
+              <input id="decoder-input" type="search" autocomplete="off" placeholder="Enter I-270 or 270" />
+              <div class="decoder-output" id="decoder-output"></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="guide-section" id="guide" aria-labelledby="guide-title">
+          <div class="section-heading compact">
+            <p class="system-line">Numbering guide</p>
+            <h2 id="guide-title">The pattern underneath the map.</h2>
+          </div>
+          <div class="guide-grid">
+            <article>
+              <span class="guide-number">01</span>
+              <h3>Mainline routes</h3>
+              <p>
+                Primary Interstate routes use one or two digits. Odd numbers usually travel north-south,
+                even numbers usually travel east-west, and larger numbers trend north or east.
+              </p>
+            </article>
+            <article>
+              <span class="guide-number">02</span>
+              <h3>Auxiliary routes</h3>
+              <p>
+                Three-digit routes usually borrow the final two digits from a parent. An even first digit
+                usually means a loop or bypass; an odd first digit usually means a spur or connector.
+              </p>
+            </article>
+            <article>
+              <span class="guide-number">03</span>
+              <h3>Non-contiguous programs</h3>
+              <p>
+                Hawaii, Alaska, and Puerto Rico have separate federally recognized Interstate programs with
+                local route labels such as H-1, A-1, and PRI-1.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="sources-section" id="sources" aria-labelledby="sources-title">
+          <div>
+            <p class="system-line">Source note</p>
+            <h2 id="sources-title">Built for public reference.</h2>
+          </div>
+          <div>
+            <p>
+              Seed data is organized from public Interstate route lists and FHWA route-numbering guidance.
+              Planning, engineering, or legal use should be verified against current FHWA, AASHTO, and state
+              transportation records.
+            </p>
+            <ul class="source-links">
+              <li><a href="https://www.fhwa.dot.gov/programadmin/interstate.cfm" target="_blank" rel="noreferrer">FHWA Interstate route numbering</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/List_of_primary_Interstate_Highways" target="_blank" rel="noreferrer">Primary Interstate route list</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/List_of_auxiliary_Interstate_Highways" target="_blank" rel="noreferrer">Auxiliary Interstate route list</a></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
