@@ -5,7 +5,7 @@
 import { shieldText } from "../data/routes.mjs";
 import { nav, footerNav } from "../data/content.mjs";
 
-const SITE_NAME = "Interstate Index";
+const SITE_NAME = "Multiplex";
 // Used for absolute canonical / OpenGraph URLs. Update if the deploy domain changes.
 const SITE_URL = "https://interstate-index.vercel.app";
 
@@ -26,9 +26,9 @@ export function shieldHTML(id, size) {
   return `<span class="${sizeCls}${variant}" aria-hidden="true"><span class="shield-num">${escapeHtml(shieldText(id))}</span></span>`;
 }
 
-// Brand mark: a small shield reading "II" for Interstate Index.
+// Brand mark: a small interstate shield reading "M" for Multiplex.
 function brandShield() {
-  return `<span class="shield shield-sm" aria-hidden="true"><span class="shield-num">II</span></span>`;
+  return `<span class="shield shield-sm" aria-hidden="true"><span class="shield-num">M</span></span>`;
 }
 
 function navHTML(activeKey) {

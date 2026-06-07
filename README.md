@@ -1,4 +1,4 @@
-# Interstate Index
+# Multiplex
 
 A static, multi-page reference atlas for the U.S. Interstate Highway System:
 a searchable route database, a number decoder, a deep numbering guide, a system

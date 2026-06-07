@@ -1,4 +1,4 @@
-// Static-site generator for the Interstate Index.
+// Static-site generator for Multiplex.
 //
 // Reads the single data source (data/routes.mjs) and the page copy
 // (data/content.mjs), wraps everything in the shared layout (assets/layout.mjs),
@@ -307,7 +307,7 @@ function buildDatabase() {
 
   return renderPage({
     key: "database",
-    title: "Interstate route database | Interstate Index",
+    title: "Interstate route database | Multiplex",
     description:
       "Search and filter every active U.S. Interstate route plus every theoretical number slot from I-1 to I-999.",
     path: "/database",
@@ -353,7 +353,7 @@ function buildDecoder() {
 
   return renderPage({
     key: "decoder",
-    title: "Interstate number decoder | Interstate Index",
+    title: "Interstate number decoder | Multiplex",
     description: "Enter any Interstate number and read its direction, parent route, and whether it is a loop or a spur.",
     path: "/decoder",
     main,
@@ -517,7 +517,7 @@ function buildRoutePage(base) {
   const metaDesc = `${route.id} (${route.states}). ${lengthBit}${route.description[0] || route.summary}`.slice(0, 300);
   return renderPage({
     key: "routes",
-    title: `${route.id}: ${route.corridor} | Interstate Index`,
+    title: `${route.id}: ${route.corridor} | Multiplex`,
     description: metaDesc,
     path: `/routes/${route.slug}`,
     main,
@@ -560,7 +560,7 @@ function buildDirectory() {
 
   return renderPage({
     key: "routes",
-    title: "Interstate route directory | Interstate Index",
+    title: "Interstate route directory | Multiplex",
     description: "An A to Z directory of every documented U.S. Interstate route, grouped by primary, non-contiguous, and auxiliary type.",
     path: "/routes",
     main,
@@ -759,7 +759,7 @@ function buildStatesIndex() {
 
   return renderPage({
     key: "states",
-    title: "Interstates by state | Interstate Index",
+    title: "Interstates by state | Multiplex",
     description: "Browse every U.S. Interstate Highway grouped by the state or territory it passes through.",
     path: "/states",
     main,
@@ -810,7 +810,7 @@ function buildStatePage(code) {
 
   return renderPage({
     key: "states",
-    title: `Interstates in ${name} | Interstate Index`,
+    title: `Interstates in ${name} | Multiplex`,
     description: `Every Interstate Highway that runs through ${name}, with status and corridor.`,
     path: `/states/${stateSlug(code)}`,
     main,
@@ -869,7 +869,7 @@ function buildSuperlatives() {
 
   return renderPage({
     key: "superlatives",
-    title: "Interstate superlatives | Interstate Index",
+    title: "Interstate superlatives | Multiplex",
     description: "The longest, shortest, most-connected, oldest, and newest U.S. Interstate Highways, computed from route data.",
     path: "/superlatives",
     main,
@@ -986,7 +986,7 @@ function build404() {
 
   return renderPage({
     key: "",
-    title: "Page not found | Interstate Index",
+    title: "Page not found | Multiplex",
     description: "The page you requested could not be found.",
     path: "/404",
     main,

@@ -24,7 +24,7 @@
   </g>
 
   <!-- copy -->
-  <text x="470" y="270" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" fill="#e9eef6">Interstate Index</text>
+  <text x="470" y="270" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" fill="#e9eef6">Multiplex</text>
   <text x="472" y="340" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" fill="#9aabc0">A reference atlas for the U.S. Interstate</text>
   <text x="472" y="382" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" fill="#9aabc0">Highway System.</text>
   <text x="472" y="452" font-family="monospace" font-size="24" font-weight="600" fill="#34c074">1,005 records  -  104 routes  -  every number decoded</text>

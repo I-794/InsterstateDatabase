@@ -57,7 +57,7 @@ export const stateNames = {
 export const featuredRouteIds = ["I-90", "I-95", "I-10", "I-5", "I-70", "I-97"];
 
 export const home = {
-  metaTitle: "Interstate Index | A reference atlas for U.S. Interstate numbering",
+  metaTitle: "Multiplex | A reference atlas for U.S. Interstate numbering",
   metaDescription:
     "Browse every active Interstate Highway, decode any route number, and explore the logic behind the U.S. Interstate numbering system.",
   heroLead:
@@ -85,7 +85,7 @@ export const home = {
 };
 
 export const guide = {
-  metaTitle: "How Interstate numbering works | Interstate Index",
+  metaTitle: "How Interstate numbering works | Multiplex",
   metaDescription:
     "A deep guide to the U.S. Interstate numbering grid: odd and even mainlines, three-digit loops and spurs, suffixes, and the routes that break the rules.",
   intro:
@@ -133,7 +133,7 @@ export const guide = {
 };
 
 export const history = {
-  metaTitle: "History of the Interstate Highway System | Interstate Index",
+  metaTitle: "History of the Interstate Highway System | Multiplex",
   metaDescription:
     "From the 1956 Federal-Aid Highway Act to today: how the U.S. Interstate Highway System was funded, built, and numbered.",
   intro:
@@ -184,7 +184,7 @@ export const history = {
 };
 
 export const map = {
-  metaTitle: "Interstate corridor map | Interstate Index",
+  metaTitle: "Interstate corridor map | Multiplex",
   metaDescription:
     "A schematic map of the major U.S. Interstate corridors, showing how the long east-west and north-south routes form a national grid.",
   intro:
@@ -205,7 +205,7 @@ export const map = {
 };
 
 export const faq = {
-  metaTitle: "Interstate Highway FAQ | Interstate Index",
+  metaTitle: "Interstate Highway FAQ | Multiplex",
   metaDescription:
     "Common questions about the U.S. Interstate Highway System: numbering, the longest and shortest routes, shields, and more.",
   items: [
@@ -241,9 +241,9 @@ export const faq = {
 };
 
 export const glossary = {
-  metaTitle: "Glossary of Interstate and highway terms | Interstate Index",
+  metaTitle: "Glossary of Interstate and highway terms | Multiplex",
   metaDescription:
-    "Definitions of the terms used across the Interstate Index, from auxiliary route to controlled access.",
+    "Definitions of the terms used across Multiplex, from auxiliary route to controlled access.",
   terms: [
     { t: "Mainline (primary) route", d: "A one or two-digit Interstate that forms part of the core national grid." },
     { t: "Auxiliary route", d: "A three-digit Interstate that branches from a two-digit parent as a loop, bypass, or spur." },
@@ -261,11 +261,11 @@ export const glossary = {
 };
 
 export const sources = {
-  metaTitle: "Sources and method | Interstate Index",
+  metaTitle: "Sources and method | Multiplex",
   metaDescription:
-    "How the Interstate Index is sourced and the limits of its data.",
+    "How Multiplex is sourced and the limits of its data.",
   intro:
-    "The Interstate Index is built for public reference and curiosity. Route records combine seeded data for active and federally recognized routes with generated records for every possible number slot.",
+    "Multiplex is built for public reference and curiosity. Route records combine seeded data for active and federally recognized routes with generated records for every possible number slot.",
   body: [
     "Mileage and year figures are rounded reference values organized from public route logs and encyclopedic route lists. They are not survey measurements.",
     "Planning, engineering, or legal work should be verified against current records from the Federal Highway Administration, AASHTO, and the relevant state departments of transportation.",
